@@ -5,6 +5,5 @@
 
 ### UI界面展示：
 
-<img src="http://oymh7obku.bkt.clouddn.com/other/IMG_1622.PNG" width="40%" height="auto">
-<img src="http://oymh7obku.bkt.clouddn.com/other/IMG_1623.PNG" width="40%" height="auto">
+<img src="http://oymh7obku.bkt.clouddn.com/other/IMG_1622.PNG" width="40%" height="auto"><img src="http://oymh7obku.bkt.clouddn.com/other/IMG_1623.PNG" width="40%" height="auto">
 
