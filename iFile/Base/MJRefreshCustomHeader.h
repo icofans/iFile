@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import <MJRefresh/MJRefresh.h>
+#import "MJRefresh.h"
 
 @interface MJRefreshCustomHeader : MJRefreshStateHeader
 

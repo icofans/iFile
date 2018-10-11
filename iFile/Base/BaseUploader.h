@@ -12,6 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseUploader : NSObject
 
+@property (nonatomic,assign,readonly) BOOL isConnect;
+
+@property (nonatomic,assign,readonly) BOOL refresh;
+
+@property (nonatomic,copy,readonly) NSString *serverUrl;
+
++ (instancetype)shareInstance;
+
+- (BOOL)startServer:(NSUInteger)port;
+
+- (BOOL)stopServer;
+
 @end
 
 NS_ASSUME_NONNULL_END

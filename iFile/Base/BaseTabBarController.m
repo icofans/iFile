@@ -8,7 +8,9 @@
 
 #import "BaseTabBarController.h"
 #import "FileViewController.h"
-#import "SettingViewController.h"
+#import "ShareViewController.h"
+#import "BaseNavigationController.h"
+#import "BaseUploader.h"
 
 @interface BaseTabBarController ()
 
@@ -20,7 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self addChildViewControllers];
+    
+    // 开启WIFI上传
+//    [[BaseUploader shareInstance] startServer:20000];
 }
 
 
@@ -29,10 +36,10 @@
 {
     
     UIViewController *homeVc = [[FileViewController alloc] init];
-    [self addOneChlildVc:homeVc title:@"文件" imageName:@"ic_home_unselected" selectedImageName:@"ic_refresh"];
+    [self addOneChlildVc:homeVc title:@"文件管理" imageName:@"tabbar_file_normal" selectedImageName:@"tabbar_file_select"];
     
-    UIViewController *profileVc = [[SettingViewController alloc] init];
-    [self addOneChlildVc:profileVc title:@"我的" imageName:@"ic_user_unselected" selectedImageName:@"ic_user"];
+    UIViewController *profileVc = [[ShareViewController alloc] init];
+    [self addOneChlildVc:profileVc title:@"文件传输" imageName:@"tabbar_share_normal" selectedImageName:@"tabbar_share_select"];
     
 }
 
@@ -61,7 +68,7 @@
     
     // 设置tabBarItem的选中文字颜色
     NSMutableDictionary *selectedTextAttrs = [NSMutableDictionary dictionary];
-    selectedTextAttrs[NSForegroundColorAttributeName] = RGB_COLOR(46,157,217);
+    selectedTextAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:61/255.0 green:159/255.0 blue:249/255.0 alpha:1];
     [childVc.tabBarItem setTitleTextAttributes:selectedTextAttrs forState:UIControlStateSelected];
     
     // 设置选中的图标
@@ -69,7 +76,7 @@
     selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVc.tabBarItem.selectedImage = selectedImage;
     // 添加为tabbar控制器的子控制器
-    TTNavigationController *nav = [[TTNavigationController alloc] initWithRootViewController:childVc];
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
 }
 

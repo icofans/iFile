@@ -1,3 +1,4 @@
+
 //
 //  BaseViewController.m
 //  iFile
@@ -17,7 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
+
+
 
 /*
 #pragma mark - Navigation
